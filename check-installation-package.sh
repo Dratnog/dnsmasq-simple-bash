@@ -25,6 +25,9 @@ else
 				break
 			elif [ "$package_installation_user_choice" = "N" ] || [ "$package_installation_user_choice" = "n" ] || [ "$package_installation_user_choice" = "no" ]; then
 				echo "Installation cancelled."
+
+				export DNSMASQ_SIMPLE_BASH_PACKAGE_DETECTED="false"
+
 				break
 			else
 				echo "Please enter \"Y\", \"y\" or \"yes\" to install $package_name_pretty or \"N\", \"n\" or \"no\" to cancel the script."
@@ -34,7 +37,6 @@ else
 	else
 		echo "$package_name is installed."
 	fi
-
 fi
 
 #EOF
