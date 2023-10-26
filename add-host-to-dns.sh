@@ -5,11 +5,14 @@
 # https://github.com/Dratnog
 # --------------------------
 
+#Ask for sudo
+[ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;}
+
 dns_file=/etc/hosts
 
 source ./check-installation-package.sh dnsmasq
 
-if [[ $DNSMASQ_SIMPLE_BASH_PACKAGE_DETECTED != "false" ]]; then
+if [[ $SIMPLE_BASH_PACKAGE_DETECTED != "false" ]]; then
 
 	echo $'\n'"Enter new host [hostname] : "
 	read new_host_name
@@ -43,6 +46,6 @@ if [[ $DNSMASQ_SIMPLE_BASH_PACKAGE_DETECTED != "false" ]]; then
 	echo ">>> Host ["$new_host_name"/"$new_host_ip"] added to ["$new_host_name"."$domain_name"] domain in" $dns_file $'\n'
 fi
 
-unset DNSMASQ_SIMPLE_BASH_PACKAGE_DETECTED
+unset SIMPLE_BASH_PACKAGE_DETECTED
 
 #EOF

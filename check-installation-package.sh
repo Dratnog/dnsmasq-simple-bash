@@ -5,6 +5,9 @@
 # https://github.com/Dratnog
 # --------------------------
 
+#Ask for sudo
+[ "$UID" -eq 0 ] || { echo "This script must be run as root."; exit 1;}
+
 
 if [[ $1 = "" ]]; then
 	echo "Script usage : ./check-installation-package.sh <package name>"
@@ -26,7 +29,7 @@ else
 			elif [ "$package_installation_user_choice" = "N" ] || [ "$package_installation_user_choice" = "n" ] || [ "$package_installation_user_choice" = "no" ]; then
 				echo "Installation cancelled."
 
-				export DNSMASQ_SIMPLE_BASH_PACKAGE_DETECTED="false"
+				export SIMPLE_BASH_PACKAGE_DETECTED="false"
 
 				break
 			else
