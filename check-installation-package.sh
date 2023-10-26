@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# --------------------------
+# Written by Dratnog
+# https://github.com/Dratnog
+# --------------------------
+
+
 if [[ $1 = "" ]]; then
 	echo "Script usage : ./check-installation-package.sh <package name>"
 else

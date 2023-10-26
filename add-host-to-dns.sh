@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# --------------------------
+# Written by Dratnog
+# https://github.com/Dratnog
+# --------------------------
+
+./check-installation-package.sh dnsmasq
+
 dns_file=/etc/hosts
 
 echo "Enter new host [hostname] : "
